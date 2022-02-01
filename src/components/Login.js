@@ -9,7 +9,6 @@ const Login = (props) => {
   const { users, dispatch } = props;
   console.log(users);
   const [username, setUsername] = useState("");
-  const [toDashBoard, setToDashboard] = useState(false);
 
   const imgUrl =
     "https://cdn-icons.flaticon.com/png/512/1921/premium/1921935.png?token=exp=1643666280~hmac=c20a8be4128b55c464fb02775ea833af";
@@ -40,9 +39,9 @@ const Login = (props) => {
           children={users}
           _onChange={(e) => setUsername(e.target.value)}
         ></Select>
-        <Button width="50px" _onClick={logIn}>
+        <Button width="50px" _onClick={logIn} text={"Select"}>
           {" "}
-          Select
+          {/* Select */}
         </Button>
         {/* </Grid> */}
       </Grid>

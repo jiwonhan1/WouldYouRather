@@ -10,6 +10,8 @@ import { handleInitialData } from "./actions/shared";
 
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import Question from "./components/Question";
+import NotFound from "./components/NotFound";
 
 const App = (props) => {
   const { dispatch } = props;
@@ -19,14 +21,16 @@ const App = (props) => {
   const { authedUser } = props;
   console.log(authedUser);
 
-  if (authedUser === null) {
-    history.push("login");
-  }
+  // if (authedUser === null) {
+  //   history.push("login");
+  // }
   return (
     <ConnectedRouter history={history}>
       {/* <Route path="/" exact component={Dashboard}/> */}
       <Route path="/login" exact component={Login} />
       <Route path="/" exact component={Dashboard} />
+      <Route path="/questions/:id" exact component={Question} />
+      <Route path="/error" exact component={NotFound} />
       {/* <Route> */}
       {/* <Routes> */}
       {/* <Route exact path="/login" element={<Login users={props.users} />} /> */}

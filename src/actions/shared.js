@@ -1,9 +1,9 @@
 import { getInitialData, saveQuestion, saveQuestionAnswer } from "../utils/api";
 import { receiveUsers, addUserQuestion, answerQuestion } from "./users";
-import { receiveQuestions, addQuestion, addQuestionAnswer } from "questions";
+import { receiveQuestions, addQuestion, addQuestionAnswer } from "./questions";
 import { setAuthedUser } from "./authedUser";
 
-const AUTHED_ID = null;
+// const AUTHED_ID = "jiwon";
 
 export function handleInitialData() {
   return (dispatch) => {
@@ -11,7 +11,7 @@ export function handleInitialData() {
       .then(({ users, questions }) => {
         dispatch(receiveQuestions(questions));
         dispatch(receiveUsers(users));
-        dispatch(setAuthedUser(AUTHED_ID));
+        // dispatch(setAuthedUser(AUTHED_ID));
       })
       .catch(function (error) {
         alert("There was an error: ", error);

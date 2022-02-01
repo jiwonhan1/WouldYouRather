@@ -4,10 +4,13 @@ import App from "./App";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 import middleware from "./middleware";
+import reducer from "./reducers";
+
+const store = createStore(reducer, middleware);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );

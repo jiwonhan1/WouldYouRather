@@ -2,44 +2,29 @@ import React, { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { Grid, Button } from "../elements";
+import { Grid, Button, Image, Text } from "../elements";
 import authedUser from "../reducers/authedUser";
 
+import { history } from "../reducers";
+
 const QuestionList = (props) => {
-  const dispatch = useDispatch();
-  const question_list = useSelector((state) => state.questions);
-  const users = useSelector((state) => state.users);
-  const authed = useSelector((state) => state.authedUser);
-  console.log(question_list);
-  console.log(users);
-  console.log(authed);
-
-  const [answeredQuestions, setAnsweredQuestions] = React.useState([]);
-  const [unansweredQuestions, setUnansweredQuestions] = React.useState([]);
-
-  const answeredQuestion = () => {
-    const questions = Object.keys(question_list)
-      .filter((id) => users[authed].answers.hasOwnProperty(id))
-      .sort((a, b) => question_list[b].timestamp - question_list[a].timestamp);
-    console.log(questions);
-    setAnsweredQuestions(questions);
-  };
-
-  const unansweredQuestion = () => {
-    const questions = Object.keys(question_list)
-      .filter((id) => !users[authed].answers.hasOwnProperty(id))
-      .sort((a, b) => question_list[b].timestamp - question_list[a].timestamp);
-    console.log(questions);
-    setUnansweredQuestions(questions);
-  };
-  console.log(answeredQuestion);
-  React.useEffect(() => {
-    answeredQuestion();
-    unansweredQuestion();
-  }, [question_list]);
+  // console.log(props);
+  const { id } = props;
+  const question = useSelector((state) => state.questions[id]);
+  const user = useSelector((state) => state.users[question.author]);
+  console.log(id);
+  console.log(question);
+  console.log(user);
   return (
     <React.Fragment>
-      <Grid is_flex></Grid>
+      <Grid _onClick={() => history.push(`/questions/${id}`)}>
+        <Image src={user.avatarURL} alt={`${question.author}`} size={200} />
+        <Grid is_flex>
+          <Text>{user.name}</Text>
+          <Text>{question.optionOne.text}</Text>
+          <Text>{question.optionTwo.text}</Text>
+        </Grid>
+      </Grid>
     </React.Fragment>
   );
 };

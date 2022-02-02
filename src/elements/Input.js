@@ -8,7 +8,7 @@ const Input = (props) => {
     props;
   return (
     <React.Fragment>
-      <Grid>
+      <Grid is_flex>
         {label && <Text margin="0px">{label}</Text>}
         {is_submit ? (
           <ElInput

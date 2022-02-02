@@ -18,10 +18,18 @@ const Header = (props) => {
     return (
       <React.Fragment>
         <Grid is_flex padding="4px 16px">
-          <Grid>
+          <Grid is_flex>
             <Text margin="0px" size="24px" bold>
               Hello {userName}!
             </Text>
+            <Button
+              width="300px"
+              text="Sign Out"
+              _onClick={() => {
+                dispatch(setAuthedUser(null));
+                history.replace("/");
+              }}
+            />
           </Grid>
           <Grid is_flex>
             <Button
@@ -31,8 +39,16 @@ const Header = (props) => {
               }}
             />
             <Button
-              text="Sign Out"
-              _onClick={() => dispatch(setAuthedUser(null))}
+              text="New Question"
+              _onClick={() => {
+                history.push("/add");
+              }}
+            />
+            <Button
+              text="Leader Board"
+              _onClick={() => {
+                history.push("/leaderboard");
+              }}
             />
           </Grid>
         </Grid>

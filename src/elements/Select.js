@@ -2,12 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Select = (props) => {
-  const { width, height, children, _onChange } = props;
+  const { width, height, children, _onChange, radio } = props;
 
   const styles = {
     width: width,
     height: height,
   };
+
+  // if (radio) {
+  //   return (
+  //     <React.Fragment>
+  //       <RadioForm {...styles} onChange={_onChange}>
+  //         {/* {children.map(ans) => { */}
+
+  //         {/* }} */}
+  //       </RadioForm>
+  //     </React.Fragment>
+  //   );
+  // }
   return (
     <React.Fragment>
       <SelectForm {...styles} onChange={_onChange}>
@@ -22,12 +34,23 @@ const Select = (props) => {
 };
 
 Select.defaultProps = {
+  radio: false,
   width: "50%",
   height: "40%",
   fontSize: "16px",
   children: null,
   _onChange: () => {},
 };
+
+// const RadioForm = styled.radio`
+//   width: ${(props) => props.width};
+//   background-color: #212121;
+//   color: #ffffff;
+//   padding: ${(props) => props.padding};
+//   box-sizing: border-box;
+//   border: none;
+//   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+// `;
 
 const SelectForm = styled.select`
   width: ${(props) => props.width};

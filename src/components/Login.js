@@ -27,11 +27,8 @@ const Login = (props) => {
   // }
   return (
     <React.Fragment>
-      <Grid is_flex center>
-        {/* <Grid> */}
+      <Grid center>
         <Image src={imgUrl} alt="log-in" size={300} />
-        {/* </Grid> */}
-        {/* <Grid> */}
         <Text size="32px" bold>
           Choose User
         </Text>
@@ -39,11 +36,7 @@ const Login = (props) => {
           children={users}
           _onChange={(e) => setUsername(e.target.value)}
         ></Select>
-        <Button width="50px" _onClick={logIn} text={"Select"}>
-          {" "}
-          {/* Select */}
-        </Button>
-        {/* </Grid> */}
+        <Button width="50px" _onClick={logIn} text={"Select"}></Button>
       </Grid>
     </React.Fragment>
   );

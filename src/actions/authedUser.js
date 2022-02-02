@@ -1,3 +1,5 @@
+import { history } from "../reducers";
+
 export const SET_AUTHED_USER = "SET_AUTHED_USER";
 
 export function setAuthedUser(id) {

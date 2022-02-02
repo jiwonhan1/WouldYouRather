@@ -12,41 +12,39 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Question from "./components/Question";
 import NotFound from "./components/NotFound";
+import Header from "./components/Header";
+
+import { Grid } from "./elements";
 
 const App = (props) => {
   const { dispatch } = props;
+
+  useEffect(() => {
+    if (props.authedUser === null) {
+      history.push("/login");
+    }
+  }, [props.authedUser]);
+
   useEffect(() => {
     dispatch(handleInitialData());
   }, [dispatch]);
+
   const { authedUser } = props;
+
   console.log(authedUser);
 
-  // if (authedUser === null) {
-  //   history.push("login");
-  // }
   return (
-    <ConnectedRouter history={history}>
-      {/* <Route path="/" exact component={Dashboard}/> */}
-      <Route path="/login" exact component={Login} />
-      <Route path="/" exact component={Dashboard} />
-      <Route path="/questions/:id" exact component={Question} />
-      <Route path="/error" exact component={NotFound} />
-      {/* <Route> */}
-      {/* <Routes> */}
-      {/* <Route exact path="/login" element={<Login users={props.users} />} /> */}
-      {/* <Route exact path="/" element={<PrivateRoute component={Dashboard} />}> */}
-      {/* <PrivateRoute exact path="/" element={<Dashboard />} /> */}
-      {/* </Route> */}
-      {/* </Routes> */}
-      {/* </Route> */}
-      {/* {props.authedUser === null ? (
-        
-      ) : (
-        // <Route>
-       
-        // </Navigate>
-      )} */}
-    </ConnectedRouter>
+    <React.Fragment>
+      <Grid>
+        <Header {...props} />
+        <ConnectedRouter history={history}>
+          <Route path="/login" exact component={Login} />
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/questions/:id" exact component={Question} />
+          <Route path="/error" exact component={NotFound} />
+        </ConnectedRouter>
+      </Grid>
+    </React.Fragment>
   );
 };
 

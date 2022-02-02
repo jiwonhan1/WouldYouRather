@@ -40,7 +40,7 @@ const GridBox = styled.div`
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
   ${(props) =>
     props.is_flex
-      ? `display: flex; align-items: center; justify-content: center; flex-direction:column; `
+      ? `display: flex; align-items: center; justify-content: space-between;  `
       : ""}
   ${(props) => (props.center ? `text-align: center;` : "")}
 

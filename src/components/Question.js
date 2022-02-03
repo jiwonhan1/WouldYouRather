@@ -22,8 +22,10 @@ const Question = (props) => {
   }
   return (
     <React.Fragment>
-      <Grid>
-        <Text>Would you rather...</Text>
+      <Grid center>
+        <Text bold size="34px">
+          Would you rather...
+        </Text>
         {answered ? (
           <AnsweredQuestion
             question={question}

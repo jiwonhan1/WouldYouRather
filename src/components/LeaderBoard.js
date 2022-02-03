@@ -21,20 +21,20 @@ const LeaderBoard = (props) => {
   console.log(classifiedUsers);
   return (
     <React.Fragment>
-      <Grid>
-        <Text bold size="30px">
+      <Grid center>
+        <Text bold size="34px">
           Leader Board
         </Text>
-        <Grid>
+        <Grid column>
           {classifiedUsers.map((user) => {
             const { id, avatarURL, name, questions, answers } = user;
             return (
-              <Grid key={id}>
-                <Image src={avatarURL} alt={name} size={300} />
-                <Grid is_flex>
-                  <Text>{name} </Text>
-                  <Text>{`Question Asked: ${questions.length}`}</Text>
-                  <Text>{`Question Answered: ${
+              <Grid key={id} is_flex width="50%" border>
+                <Image src={avatarURL} alt={name} size={200} />
+                <Grid width="25%">
+                  <Text size="30px">{name} </Text>
+                  <Text size="22px">{`Question Asked: ${questions.length}`}</Text>
+                  <Text size="22px">{`Question Answered: ${
                     Object.keys(answers).length
                   }`}</Text>
                 </Grid>

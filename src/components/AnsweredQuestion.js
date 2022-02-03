@@ -16,35 +16,47 @@ const AnsweredQuestion = (props) => {
   );
   return (
     <React.Fragment>
-      <Grid is_flex>
-        <Grid is_flex>
-          <Image src={author.avatarURL} size={150} />
-          <Text>{author.name} asks:</Text>
+      <Grid column>
+        <Grid is_flex width="50%" border>
+          <Image src={author.avatarURL} size={200} />
+          <Text size="35px">{author.name} asks...</Text>
         </Grid>
-        <Grid>
-          <Grid>
-            <Text>{optionOne.text}</Text>
-            <Text>{optionOnePercent}</Text>
+        <Grid width="50%" is_flex border>
+          <Grid column border>
+            <Grid>
+              <Text size="28px" bold>
+                {optionOne.text}
+              </Text>
+            </Grid>
+            <Grid is_flex>
+              <Text size="20px">Percent: {optionOnePercent}</Text>
+              {optionOne.votes.includes(authedUser) ? (
+                <Text bold size="20px">
+                  Your choice
+                </Text>
+              ) : null}
+              <Text size="20px">
+                Chosen by {optionOne.votes.length} out of {totalVotes}
+              </Text>
+            </Grid>
           </Grid>
-          <Grid>
-            {optionOne.votes.includes(authedUser) ? (
-              <Text bold> Your choice</Text>
-            ) : null}
-            <Text>
-              Chosen by {optionOne.votes.length} out of {totalVotes}
-            </Text>
-          </Grid>
-          <Grid>
-            <Text>{optionTwo.text}</Text>
-            <Text>{optionTwoPercent}</Text>
-          </Grid>
-          <Grid>
-            {optionTwo.votes.includes(authedUser) ? (
-              <Text bold> Your choice</Text>
-            ) : null}
-            <Text>
-              Chosen by {optionTwo.votes.length} out of {totalVotes}
-            </Text>
+          <Grid column>
+            <Grid>
+              <Text size="28px" bold>
+                {optionTwo.text}
+              </Text>
+            </Grid>
+            <Grid is_flex>
+              <Text size="20px">Percent: {optionTwoPercent}</Text>
+              {optionTwo.votes.includes(authedUser) ? (
+                <Text bold size="20px">
+                  Your choice
+                </Text>
+              ) : null}
+              <Text size="20px">
+                Chosen by {optionTwo.votes.length} out of {totalVotes}
+              </Text>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

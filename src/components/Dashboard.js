@@ -36,14 +36,30 @@ const Dashboard = (props) => {
 
   return (
     <React.Fragment>
-      <Grid is_flex>
-        <Button text="Unanswered" _onClick={() => setActiveTab("1")} />
-        <Button text="Answered" _onClick={() => setActiveTab("2")} />
-      </Grid>
-      <Grid>
-        {unansweredQuestions && activeTab == "1"
-          ? unansweredQuestions.map((id) => <QuestionList key={id} id={id} />)
-          : answeredQuestions.map((id) => <QuestionList key={id} id={id} />)}
+      <Grid center>
+        <Grid is_flex>
+          <Grid>
+            <Button
+              margin="20px"
+              width="300px"
+              text="Unanswered"
+              _onClick={() => setActiveTab("1")}
+            />
+          </Grid>
+          <Grid>
+            <Button
+              margin="20px"
+              width="300px"
+              text="Answered"
+              _onClick={() => setActiveTab("2")}
+            />
+          </Grid>
+        </Grid>
+        <Grid>
+          {unansweredQuestions && activeTab == "1"
+            ? unansweredQuestions.map((id) => <QuestionList key={id} id={id} />)
+            : answeredQuestions.map((id) => <QuestionList key={id} id={id} />)}
+        </Grid>
       </Grid>
     </React.Fragment>
   );

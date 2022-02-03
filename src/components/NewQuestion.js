@@ -20,12 +20,15 @@ const NewQuestion = (props) => {
   };
   return (
     <React.Fragment>
-      <Grid>
-        <Grid>
-          <Text>Would you rather...</Text>
+      <Grid column>
+        <Grid center>
+          <Text bold size="34px">
+            Would you rather...
+          </Text>
         </Grid>
-        <Grid>
+        <Grid width="60%">
           <Input
+            width="550px"
             label={"Choice One"}
             placeholder="Please enter choice one"
             _onChange={(e) => {
@@ -33,8 +36,9 @@ const NewQuestion = (props) => {
             }}
           />
         </Grid>
-        <Grid>
+        <Grid width="60%">
           <Input
+            width="550px"
             label={"Choice Two"}
             placeholder="Please enter choice two"
             _onChange={(e) => {
@@ -43,6 +47,7 @@ const NewQuestion = (props) => {
           />
         </Grid>
         <Button
+          width="300px"
           text="Submit"
           _onClick={(e) => {
             handleSubmit(e);

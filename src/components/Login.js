@@ -21,22 +21,24 @@ const Login = (props) => {
       history.push("/");
     }
   };
-
-  // if (setToDashboard) {
-  //   return history.push("/");
-  // }
   return (
     <React.Fragment>
-      <Grid center>
+      <Grid center column>
         <Image src={imgUrl} alt="log-in" size={300} />
-        <Text size="32px" bold>
-          Choose User
-        </Text>
-        <Select
-          children={users}
-          _onChange={(e) => setUsername(e.target.value)}
-        ></Select>
+
+        {/* <Grid margin="0px"> */}
+        <Grid margin="10px">
+          <Text size="32px" bold>
+            Choose User
+          </Text>
+          <Select
+            width="60%"
+            children={users}
+            _onChange={(e) => setUsername(e.target.value)}
+          ></Select>
+        </Grid>
         <Button width="50px" _onClick={logIn} text={"Select"}></Button>
+        {/* </Grid> */}
       </Grid>
     </React.Fragment>
   );

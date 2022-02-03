@@ -17,13 +17,14 @@ const Header = (props) => {
     const userName = props.users[authed].name;
     return (
       <React.Fragment>
-        <Grid is_flex padding="4px 16px">
-          <Grid is_flex>
-            <Text margin="0px" size="24px" bold>
+        <Grid is_flex backgroundColor={"green"}>
+          <Grid is_flex width="20%">
+            <Text margin="0px" size="24px" bold color={"#ffffff"}>
               Hello {userName}!
             </Text>
             <Button
-              width="300px"
+              nav
+              width="200px"
               text="Sign Out"
               _onClick={() => {
                 dispatch(setAuthedUser(null));
@@ -31,35 +32,39 @@ const Header = (props) => {
               }}
             />
           </Grid>
-          <Grid is_flex>
-            <Button
-              text="Home"
-              _onClick={() => {
-                history.push("/");
-              }}
-            />
-            <Button
-              text="New Question"
-              _onClick={() => {
-                history.push("/add");
-              }}
-            />
-            <Button
-              text="Leader Board"
-              _onClick={() => {
-                history.push("/leaderboard");
-              }}
-            />
-          </Grid>
+          <Button
+            nav
+            width="200px"
+            text="Home"
+            _onClick={() => {
+              history.push("/");
+            }}
+          />
+          <Button
+            nav
+            width="200px"
+            text="New Question"
+            _onClick={() => {
+              history.push("/add");
+            }}
+          />
+          <Button
+            nav
+            width="200px"
+            text="Leader Board"
+            _onClick={() => {
+              history.push("/leaderboard");
+            }}
+          />
         </Grid>
       </React.Fragment>
     );
   }
   return (
     <React.Fragment>
-      <Grid>
-        <Text margin="0" size="24px" bold>
-          Welcome to Would You Rather!
+      <Grid center>
+        <Text margin="0" size="40px" bold>
+          Would You Rather?
         </Text>
       </Grid>
     </React.Fragment>

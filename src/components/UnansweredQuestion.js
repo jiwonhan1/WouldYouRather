@@ -19,34 +19,39 @@ const UnansweredQuestion = (props) => {
   };
   return (
     <React.Fragment>
-      <Grid>
-        <Image src={avatarURL}></Image>
-        <Text>{name} asks: </Text>
-      </Grid>
-      <Grid padding="16px 0px" is_flex>
-        <Input
-          type={"radio"}
-          label={optionOne.text}
-          _onChange={(e) => {
-            setAnswer("optionOne");
+      <Grid column>
+        {/* <Grid border center> */}
+        <Grid is_flex width="50%">
+          <Image src={avatarURL} size={200}></Image>
+          <Text size="35px">{name} asks </Text>
+        </Grid>
+        <Grid width="50%" border>
+          <Input
+            type={"radio"}
+            label={optionOne.text}
+            _onChange={(e) => {
+              setAnswer("optionOne");
+            }}
+          />
+          {/* </Grid> */}
+          {/* <Grid padding="16px 0px"> */}
+          <Input
+            type={"radio"}
+            label={optionTwo.text}
+            _onChange={(e) => {
+              setAnswer("optionTwo");
+            }}
+          />
+        </Grid>
+        {/* </Grid> */}
+        <Button
+          width="300px"
+          text="Would you Rather?"
+          _onClick={(e) => {
+            handleSubmit(id, e);
           }}
         />
       </Grid>
-      <Grid padding="16px 0px">
-        <Input
-          type={"radio"}
-          label={optionTwo.text}
-          _onChange={(e) => {
-            setAnswer("optionTwo");
-          }}
-        />
-      </Grid>
-      <Button
-        text="Would you Rather?"
-        _onClick={(e) => {
-          handleSubmit(id, e);
-        }}
-      />
     </React.Fragment>
   );
 };

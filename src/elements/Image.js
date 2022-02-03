@@ -28,7 +28,6 @@ const ImageDefault = styled.div`
   height: var(--size);
   background-image: url("${(props) => props.src}");
   background-size: cover;
-  border: 2px solid black;
 `;
 
 export default Image;

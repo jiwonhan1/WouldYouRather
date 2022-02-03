@@ -33,4 +33,4 @@ The project can be viewed in the browser at
 
 ## Screenshots
 
-<img src="src/utils/Screenshot.png" width="700px" height="400px"/>
+<img src="src/utils/screenshot.PNG" width="800px" height="400px"/>

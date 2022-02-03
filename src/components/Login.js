@@ -9,8 +9,7 @@ const Login = (props) => {
   console.log(users);
   const [username, setUsername] = useState("");
 
-  const imgUrl =
-    "https://cdn-icons.flaticon.com/png/512/1921/premium/1921935.png?token=exp=1643666280~hmac=c20a8be4128b55c464fb02775ea833af";
+  const imgUrl = "https://cdn-icons-png.flaticon.com/512/1256/1256677.png";
 
   const logIn = (e) => {
     e.preventDefault();

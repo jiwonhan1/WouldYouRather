@@ -31,8 +31,6 @@ const App = (props) => {
     dispatch(handleInitialData());
   }, [dispatch]);
 
-  const { authedUser } = props;
-
   return (
     <React.Fragment>
       <Grid>

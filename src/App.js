@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import { history } from "./reducers";
 
@@ -22,30 +22,36 @@ const App = (props) => {
   const { dispatch } = props;
 
   useEffect(() => {
-    if (props.authedUser === null) {
-      history.push("/login");
-    }
-  }, [props.authedUser]);
-
-  useEffect(() => {
     dispatch(handleInitialData());
   }, [dispatch]);
 
-  return (
-    <React.Fragment>
-      <Grid>
-        <Header {...props} />
-        <ConnectedRouter history={history}>
-          <Route path="/login" exact component={Login} />
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/questions/:id" exact component={Question} />
-          <Route path="/error" exact component={NotFound} />
-          <Route path="/add" exact component={NewQuestion} />
-          <Route path="/leaderboard" exact component={LeaderBoard} />
-        </ConnectedRouter>
-      </Grid>
-    </React.Fragment>
-  );
+  if (props.authedUser === null) {
+    return (
+      <Router>
+        <Route>
+          <Grid>
+            <Login />
+          </Grid>
+        </Route>
+      </Router>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <Grid>
+          <Header {...props} />
+          <ConnectedRouter history={history}>
+            <Route path="/login" exact component={Login} />
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/questions/:id" exact component={Question} />
+            <Route path="/error" exact component={NotFound} />
+            <Route path="/add" exact component={NewQuestion} />
+            <Route path="/leaderboard" exact component={LeaderBoard} />
+          </ConnectedRouter>
+        </Grid>
+      </React.Fragment>
+    );
+  }
 };
 
 function mapStateToProps({ authedUser, users }) {

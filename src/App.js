@@ -27,13 +27,16 @@ const App = (props) => {
 
   if (props.authedUser === null) {
     return (
-      <Router>
-        <Route>
-          <Grid>
-            <Login />
-          </Grid>
-        </Route>
-      </Router>
+      <React.Fragment>
+        <Router>
+          <Route>
+            <Grid>
+              <Header {...props} />
+              <Login />
+            </Grid>
+          </Route>
+        </Router>
+      </React.Fragment>
     );
   } else {
     return (

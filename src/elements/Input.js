@@ -13,9 +13,10 @@ const Input = (props) => {
     is_submit,
     onSubmit,
     width,
+    checked,
   } = props;
 
-  const styles = { width: width };
+  const styles = { width: width, checked: checked };
 
   return (
     <React.Fragment>
@@ -68,6 +69,7 @@ const ElInput = styled.input`
   padding: 12px 4px;
   box-sizing: border-box;
   ${(props) => (props.width ? `width: ${props.width};` : "")}
+  ${(props) => (props.checked ? `checked: ${props.checked};` : "")}
 `;
 
 export default Input;

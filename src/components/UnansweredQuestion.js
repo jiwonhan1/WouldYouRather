@@ -31,6 +31,7 @@ const UnansweredQuestion = (props) => {
             _onChange={(e) => {
               setAnswer("optionOne");
             }}
+            checked={answer === "optionOne"}
           />
           <Input
             type={"radio"}
@@ -38,6 +39,7 @@ const UnansweredQuestion = (props) => {
             _onChange={(e) => {
               setAnswer("optionTwo");
             }}
+            checked={answer === "optionTwo"}
           />
         </Grid>
         <Button

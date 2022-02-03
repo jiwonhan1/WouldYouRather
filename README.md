@@ -35,6 +35,8 @@ The project can be viewed in the browser at
 
 <img src="src/utils/image/screenshot.PNG" width="900px" height="500px"/>
 
+<img src="src/utils/image/screenshot2.PNG" width="900px" height="500px"/>
+
 ## Developer
 
 I am Jiwon who is devlving into Front-end development with React! Any feedback is appreciated!🥰

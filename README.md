@@ -31,6 +31,6 @@ The project can be viewed in the browser at
 
 - [http://localhost:3000](http://localhost:3000)
 
-<!-- ## Screenshots
+## Screenshots
 
-![screenshot #2](docs/assets/images/wyr76-small.jpg) -->
+<img src="src/utils/Screenshot.png" width="700px" height="400px"/>

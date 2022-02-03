@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { Grid, Text, Image, Select, Button } from "../elements";
-import { Redirect } from "react-router-dom";
 import { history } from "../reducers";
 
 const Login = (props) => {
@@ -25,8 +24,6 @@ const Login = (props) => {
     <React.Fragment>
       <Grid center column>
         <Image src={imgUrl} alt="log-in" size={300} />
-
-        {/* <Grid margin="0px"> */}
         <Grid margin="10px">
           <Text size="32px" bold>
             Choose User
@@ -38,7 +35,6 @@ const Login = (props) => {
           ></Select>
         </Grid>
         <Button width="50px" _onClick={logIn} text={"Select"}></Button>
-        {/* </Grid> */}
       </Grid>
     </React.Fragment>
   );

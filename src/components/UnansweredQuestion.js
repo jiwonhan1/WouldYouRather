@@ -20,7 +20,6 @@ const UnansweredQuestion = (props) => {
   return (
     <React.Fragment>
       <Grid column>
-        {/* <Grid border center> */}
         <Grid is_flex width="50%">
           <Image src={avatarURL} size={200}></Image>
           <Text size="35px">{name} asks </Text>
@@ -33,8 +32,6 @@ const UnansweredQuestion = (props) => {
               setAnswer("optionOne");
             }}
           />
-          {/* </Grid> */}
-          {/* <Grid padding="16px 0px"> */}
           <Input
             type={"radio"}
             label={optionTwo.text}
@@ -43,7 +40,6 @@ const UnansweredQuestion = (props) => {
             }}
           />
         </Grid>
-        {/* </Grid> */}
         <Button
           width="300px"
           text="Would you Rather?"

@@ -9,9 +9,6 @@ import { setAuthedUser } from "../actions/authedUser";
 const Header = (props) => {
   const dispatch = useDispatch();
   const authed = useSelector((state) => state.authedUser);
-  // const user = useSelector((state) => console.log(state.users[is_login].name));
-
-  console.log(props);
 
   if (authed !== null) {
     const userName = props.users[authed].name;

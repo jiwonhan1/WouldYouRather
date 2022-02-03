@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Grid, Button } from "../elements";
-import authedUser from "../reducers/authedUser";
 
 import QuestionList from "./QuestionList";
 
 const Dashboard = (props) => {
-  const dispatch = useDispatch();
   const question_list = useSelector((state) => state.questions);
   const users = useSelector((state) => state.users);
   const authed = useSelector((state) => state.authedUser);

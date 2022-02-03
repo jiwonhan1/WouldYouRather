@@ -1,5 +1,4 @@
 import React from "react";
-import { history } from "../reducers";
 import { Grid, Text, Image } from "../elements";
 
 const AnsweredQuestion = (props) => {

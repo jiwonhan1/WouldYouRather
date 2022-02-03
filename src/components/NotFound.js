@@ -4,7 +4,6 @@ import { Grid, Text, Button } from "../elements";
 import { history } from "../reducers";
 
 const NotFound = (props) => {
-  const { history } = props;
   return (
     <React.Fragment>
       <Grid>

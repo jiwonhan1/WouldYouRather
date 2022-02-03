@@ -1,5 +1,7 @@
 # Would You Rather❓
 
+<img src="src/utils/image/screenshot2.PNG" width="900px" height="500px"/>
+
 Would You Rather is a polling game that presents the user with a series of questions.
 
 <!-- ![screenshot #1](docs/assets/images/wyr77-small.jpg) -->
@@ -32,10 +34,8 @@ The project can be viewed in the browser at
 - [http://localhost:3000](http://localhost:3000)
 
 ## Screenshots
-
+### Leader Board
 <img src="src/utils/image/screenshot.PNG" width="900px" height="500px"/>
-
-<img src="src/utils/image/screenshot2.PNG" width="900px" height="500px"/>
 
 ## Developer
 

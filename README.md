@@ -1,4 +1,4 @@
-# Would You Rather
+# Would You Rather❓
 
 Would You Rather is a polling game that presents the user with a series of questions.
 
@@ -33,4 +33,8 @@ The project can be viewed in the browser at
 
 ## Screenshots
 
-<img src="src/utils/image/screenshot.PNG" width="800px" height="400px"/>
+<img src="src/utils/image/screenshot.PNG" width="900px" height="500px"/>
+
+## Developer
+
+I am Jiwon who is devlving into Front-end development with React! Any feedback is appreciated!🥰

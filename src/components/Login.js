@@ -13,7 +13,6 @@ const Login = (props) => {
 
   const logIn = (e) => {
     e.preventDefault();
-    console.log(username);
     if (username !== "") {
       dispatch(setAuthedUser(username));
       history.push("/");

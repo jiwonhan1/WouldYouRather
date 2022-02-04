@@ -24,7 +24,14 @@ const App = (props) => {
   useEffect(() => {
     dispatch(handleInitialData());
   }, [dispatch]);
+  // useEffect(() => {
+  //   if (props.authedUser === null) {
+  //     history.push("/login");
+  //   }
+  // }, []);
+  console.log(props.authedUser);
 
+  console.log(props);
   if (props.authedUser === null) {
     return (
       <React.Fragment>

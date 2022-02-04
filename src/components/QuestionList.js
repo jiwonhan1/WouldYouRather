@@ -10,6 +10,8 @@ const QuestionList = (props) => {
   const { id } = props;
   const question = useSelector((state) => state.questions[id]);
   const user = useSelector((state) => state.users[question.author]);
+
+  console.log(question);
   return (
     <React.Fragment>
       <Grid column>

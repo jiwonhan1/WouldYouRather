@@ -2,8 +2,7 @@ let users = {
   sarahedo: {
     id: "sarahedo",
     name: "Sarah Edo",
-    avatarURL:
-      "https://cdn-icons.flaticon.com/png/512/2423/premium/2423853.png?token=exp=1643909018~hmac=5c35fa883f325cb680b864a1bfdae26c",
+    avatarURL: "https://tylermcginnis.com/would-you-rather/sarah.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionOne",
@@ -15,8 +14,7 @@ let users = {
   tylermcginnis: {
     id: "tylermcginnis",
     name: "Tina Kim",
-    avatarURL:
-      "https://cdn-icons.flaticon.com/png/512/2423/premium/2423830.png?token=exp=1643908968~hmac=7370bf999e03702a28901ac6e643a0e4",
+    avatarURL: "https://tylermcginnis.com/would-you-rather/tyler.jpg",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -26,8 +24,7 @@ let users = {
   johndoe: {
     id: "johndoe",
     name: "John Doe",
-    avatarURL:
-      "https://cdn-icons.flaticon.com/png/512/2423/premium/2423809.png?token=exp=1643909355~hmac=94f5c1c0aaff086a05145c78d55c3b39",
+    avatarURL: "https://tylermcginnis.com/would-you-rather/dan.jpg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",

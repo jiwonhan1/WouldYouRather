@@ -39,4 +39,4 @@ The project can be viewed in the browser at
 
 ## Developer
 
-I am Jiwon who is devlving into Front-end development with React! Any feedback is appreciated!🥰
+I am Jiwon who is delving into Front-end development with React! Any feedback is appreciated!🥰
